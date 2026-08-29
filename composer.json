@@ -1,0 +1,29 @@
+{
+    "name": "sifrious/authorization-contract",
+    "description": "Framework-neutral actor, tenant, and authorization decision contracts.",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": "^8.3",
+        "sifrious/reference-contract": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sifrious\\AuthorizationContract\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com-sifrious:sifrious/dep-reference-contract.git"
+        }
+    ],
+    "scripts": {
+        "test": "php tests/run.php"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
