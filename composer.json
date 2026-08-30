@@ -1,7 +1,7 @@
 {
     "name": "sifrious/authorization-contract",
     "description": "Framework-neutral actor, tenant, and authorization decision contracts.",
-    "license": "MIT",
+    "license": "proprietary",
     "type": "library",
     "require": {
         "php": "^8.3",

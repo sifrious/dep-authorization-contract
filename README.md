@@ -1,5 +1,9 @@
 # Authorization Contract
 
+> **License:** Copyright © 2026 Sifrious. All rights reserved. This is
+> publicly viewable proprietary software, not open-source software. See
+> [LICENSE.md](LICENSE.md).
+
 Portable PHP 8.3 values describing who is acting, the explicit tenant/isolation scope, and a domain-owned authorization decision. The package carries context; it does not grant permissions or centralize domain policy.
 
 Contexts contain durable references only. Session tokens, provider credentials, and other secrets are not fields in the contract.
