@@ -4,14 +4,14 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "57eacc228350ade4c96a672f3ca072d6",
+    "content-hash": "0fee6040856e2b582a6117e6ea451473",
     "packages": [
         {
             "name": "sifrious/reference-contract",
             "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "git@github.com-sifrious:sifrious/dep-reference-contract.git",
+                "url": "git@github.com:sifrious/dep-reference-contract.git",
                 "reference": "13d9d69427032cbf09c769bbb3b68744c380824f"
             },
             "require": {
