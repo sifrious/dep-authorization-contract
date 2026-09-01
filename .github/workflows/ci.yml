@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # 8.3 is the floor composer.json declares, so it is proven rather than assumed.
+        php: ['8.3', '8.4']
+
+    name: PHP ${{ matrix.php }}
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+
+      # This step is the point of the workflow, not preparation for it. MME-2193: these packages
+      # addressed each other through an SSH alias that existed in one developer's ~/.ssh/config, so
+      # they installed on exactly one machine and nowhere else. A runner has never seen that alias
+      # and holds no credential, so a green install here is the proof the ticket asks for -- and it
+      # is proof that keeps being made, rather than a developer saying so once.
+      - run: composer install --no-interaction --prefer-dist --no-progress
+
+      - run: composer test
+
+      - run: composer audit --locked --no-interaction
