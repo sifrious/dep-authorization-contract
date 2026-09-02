@@ -14,4 +14,12 @@ Contexts contain durable references only. Session tokens, provider credentials, 
 composer test
 ```
 
-The command covers same-tenant permission, cross/wrong-tenant denial, missing-actor fail-closed behavior, disclosure-safe denial, service acting-for-user, and JSON/queue round trips with no credential fields.
+The command covers the MME-2072 human-runnable completion gate:
+
+- same-tenant permitted context;
+- cross/wrong-tenant denial independently of account identity;
+- missing-actor fail-closed behavior;
+- service acting-for-user JSON/queue round trip with no credential fields;
+- authorization-decision round trip with policy, disclosure, and provenance intact;
+- public identity resolution without disclosure of a cross-tenant private relation neighborhood; and
+- missing-versus-forbidden disclosure without counts or candidate identities.
